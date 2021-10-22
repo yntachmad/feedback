@@ -44,7 +44,7 @@ $this->params['menu']='user';
                 <form action="<?= Url::to(['/user/search']); ?>">
                     <div class="input-group input-group-sm" style="width: 150px;">
 
-                        <input type="text" name="keyword" class="form-control float-right" placeholder="Search">
+                        <input type="text" value="<?= Yii::$app->request->get('keyword') ?>" name="keyword" class="form-control float-right" placeholder="Search">
 
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-default">
@@ -79,6 +79,7 @@ $this->params['menu']='user';
 
     <!-- /.card-body -->
     <div class="card-footer">
+        
         <nav aria-label="Contacts Page Navigation">
             <ul class="pagination justify-content-center m-0">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>

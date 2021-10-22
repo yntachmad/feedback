@@ -46,4 +46,12 @@ class UserQuery extends \yii\db\ActiveQuery
     {
         return $this->andWhere("MATCH (full_name,username,level) AGAINST (:keyword)",['keyword' => $keyword]);
     }
+
+    public function byKeyword1($keyword)
+    {
+        return $this->where(['like', 'level', $keyword])
+        ->orWhere(['like', 'username', $keyword])
+        ->orWhere(['like', 'full_name', $keyword]);
+        
+    }
 }

@@ -43,6 +43,8 @@ class UserController extends Controller
             'query' => User::find()->activestatus()->latest(),
         ]);
 
+        $dataProvider->setPagination(['pageSize' => 50]); 
+
         return $this->render('index', [
             //'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -127,8 +129,17 @@ class UserController extends Controller
        // $searchModel = new UserSearch();
         //$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $query = User::find()
+            ->activestatus()
+            ->latest();
+            if($keyword){
+                $query->byKeyword1($keyword);
+            }
+        
+        
         $dataProvider = new ActiveDataProvider([
-            'query' => User::find()->activestatus()->latest()->byKeyword($keyword),
+            'query' => $query,
+            
         ]);
 
         return $this->render('index', [
