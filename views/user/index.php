@@ -5,6 +5,7 @@ use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
+use yii\bootstrap4\LinkPager;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -79,8 +80,25 @@ $this->params['menu']='user';
 
     <!-- /.card-body -->
     <div class="card-footer">
+
+    <?php
+
+                      echo LinkPager::widget([
+                          'pagination' => $dataProvider->pagination,
+                          'maxButtonCount'=>4,
+                        //  'prevPageLabel' => false,
+                         // 'nextPageLabel' => false,
+                        //  'firstPageCssClass'=> 'First',
+                          'options' =>['class' =>'Contacts Page Navigation' ],
+                          'listOptions' =>['class'=>'pagination justify-content-center m-0'],
+                          'linkOptions' =>['class '=>'page-link'],
+                      ]);
+
+
+
+?>
         
-        <nav aria-label="Contacts Page Navigation">
+        <!-- <nav aria-label="Contacts Page Navigation">
             <ul class="pagination justify-content-center m-0">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -91,7 +109,7 @@ $this->params['menu']='user';
                 <li class="page-item"><a class="page-link" href="#">7</a></li>
                 <li class="page-item"><a class="page-link" href="#">8</a></li>
             </ul>
-        </nav>
+        </nav> -->
     </div>
     <!-- /.card-footer -->
     </div>
