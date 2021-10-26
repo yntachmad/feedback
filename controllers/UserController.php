@@ -43,7 +43,7 @@ class UserController extends Controller
             'query' => User::find()->activestatus()->latest(),
         ]);
 
-        $dataProvider->setPagination(['pageSize' => 1]); 
+        $dataProvider->setPagination(['pageSize' => 4]); 
 
         return $this->render('index', [
             //'searchModel' => $searchModel,
