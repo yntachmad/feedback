@@ -42,11 +42,11 @@ $this->params['menu']='user';
             <h3 class="card-title">Add</h3>
 
             <div class="card-tools">
-                <form action="<?= Url::to(['/user/search']); ?>">
+                <form action="<?= Url::to(['/user/search']); ?>" method="get" data-pjax="1">
                     <div class="input-group input-group-sm" style="width: 150px;">
 
                         <input type="text" value="<?= Yii::$app->request->get('keyword') ?>" name="keyword"
-                            class="form-control float-right" placeholder="Search">
+                            class="form-control float-right" placeholder="Search">                              
 
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-default">
