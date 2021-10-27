@@ -58,7 +58,7 @@ $this->params['menu']='user';
             </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 330px;">
+        <div class="card-body table-responsive p-2" style="height: 330px;">
             <?php Pjax::begin(); ?>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
