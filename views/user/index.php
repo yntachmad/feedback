@@ -39,13 +39,14 @@ $this->params['menu']='user';
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Fixed Header Table</h3>
+            <h3 class="card-title">Add</h3>
 
             <div class="card-tools">
                 <form action="<?= Url::to(['/user/search']); ?>">
                     <div class="input-group input-group-sm" style="width: 150px;">
 
-                        <input type="text" value="<?= Yii::$app->request->get('keyword') ?>" name="keyword" class="form-control float-right" placeholder="Search">
+                        <input type="text" value="<?= Yii::$app->request->get('keyword') ?>" name="keyword"
+                            class="form-control float-right" placeholder="Search">
 
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-default">
@@ -57,19 +58,19 @@ $this->params['menu']='user';
             </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 350px;">
+        <div class="card-body table-responsive p-0" style="height: 330px;">
             <?php Pjax::begin(); ?>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
             <?= ListView::widget([
-        'dataProvider' => $dataProvider,
-        'itemView' => '_userItem',
-        'layout' => '<div class="d-flex flex-wrap">{items}</div>',
-        'itemOptions' => [
-            'tag' => false,
-        ]
-    
-    ]); ?>
+                'dataProvider' => $dataProvider,
+                'itemView' => '_userItem',
+                'layout' => '<div class="d-flex flex-wrap">{items}</div>',
+                'itemOptions' => [
+                    'tag' => false,
+                ]
+            
+            ]); ?>
 
             <?php Pjax::end(); ?>
 
@@ -81,7 +82,7 @@ $this->params['menu']='user';
     <!-- /.card-body -->
     <div class="card-footer">
 
-    <?php
+        <?php
 
                       echo LinkPager::widget([
                           'pagination' => $dataProvider->pagination,
@@ -97,7 +98,7 @@ $this->params['menu']='user';
 
 
 ?>
-        
+
         <!-- <nav aria-label="Contacts Page Navigation">
             <ul class="pagination justify-content-center m-0">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
